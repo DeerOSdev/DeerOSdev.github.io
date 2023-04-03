@@ -9,31 +9,27 @@
 	</head>
 
 	<style>
-		* {
-			cursor: none !important;
+		.custom-cursor {
+		    position: absolute;
+		    display: block;
+		    width: 20px;
+		    height: 20px;
+		    border-radius: 50%;
+		    background-color: #fff;
+		    z-index: 9999;
+		    pointer-events: none;
+		    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+		    opacity: 1;
 		}
 
-		.custom-cursor {
-            position: absolute;
-            display: block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #fff;
-            z-index: 9999;
-            pointer-events: none;
-            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-            opacity: 1;
-        }
-
-        @keyframes cursorAnimation {
-            from {
-                transform: rotate(0);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
+		@keyframes cursorAnimation {
+		    from {
+			transform: rotate(0);
+		    }
+		    to {
+			transform: rotate(360deg);
+		    }
+		}
 	</style>
 
 	<body class="is-preload">
