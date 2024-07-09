@@ -1,196 +1,168 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title> Project DeerOS</title>
+		<title>Project BirdOS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
-	<style>
-		* {
-			cursor: none !important;
-		}
-
-		.custom-cursor {
-            position: absolute;
-            display: block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #fff;
-            z-index: 9999;
-            pointer-events: none;
-            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-            opacity: 1;
-        }
-
-        @keyframes cursorAnimation {
-            from {
-                transform: rotate(0);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-	</style>
-
 	<body class="is-preload">
 
-		<div class="custom-cursor"></div>
-
-		<script>
-			var cursor = document.querySelector('.custom-cursor');
-			var isCursorVisible = true;
-			
-			function updateCursorPos(x, y) {
-				cursor.style.transform = 'translate3d(' + (x - 10) + 'px, ' + (y - 10) + 'px, 0)';
-			}
-
-			function showCursor() {
-				cursor.style.opacity = 1;
-				isCursorVisible = true;
-			}
-
-			function hideCursor() {
-				cursor.style.opacity = 0;
-				isCursorVisible = false;
-			}
-
-			function onMouseMove(e) {
-				updateCursorPos(e.clientX, e.clientY + window.pageYOffset);
-				if (!isCursorVisible) {
-					showCursor();
-				}
-				clearTimeout(hideTimeout);
-				hideTimeout = setTimeout(hideCursor, 1000);
-			}
-
-			function onScroll() {
-				updateCursorPos(
-					window.event.clientX, 
-					window.event.clientY + window.pageYOffset
-				);
-			}
-
-			var hideTimeout = setTimeout(hideCursor, 1000);
-			document.addEventListener('mousemove', onMouseMove);
-			window.addEventListener('scroll', onScroll);
-		</script>
-
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="fa-d"></span>
+			<!-- Header -->
+			<header id="header">
+				<div class="logo">
+					<img class="logo-img" src="images/birb.png" alt="" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>Project BirdOS</h1>
+						<p>A Windows version with all the trash and spyware removed.<br />The way it was meant to be.</p>
+					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#intro">About</a></li>
+						<li><a href="#install">Install</a></li>
+						<li><a onclick="joinServer()">Discord</a></li>
+						<li><a href="#legal">Legal</a></li>
+						<li><a href="#team">Team</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+				<article id="intro">
+					<h2 class="major">ABOUT</h2>
+					<span class="image main"><img src="images/sec.jpg" alt="" /></span>
+					<p>
+						Welcome to BirdOS! BirdOS is a fully debloated version of Windows 10. We've taken Microsoft's Windows 10 and removed all the unnecessary bloatware and clutter. The result is a faster, cleaner, and more efficient operating system.<br /><br />
+
+						Why BirdOS?<br /><br />
+
+						Speed and Performance: Windows 10 often comes with many pre-installed apps and features that slow down your computer. With BirdOS, we've removed all that extra stuff. This means your computer runs faster and smoother.<br /><br />
+
+						More Control: Microsoft's Windows 10 includes many features and apps you may not need or want. BirdOS gives you more control over your system. You decide what you want on your computer.<br /><br />
+
+						Better Privacy: We value your privacy. BirdOS reduces unnecessary data collection and tracking, giving you a more private computing experience.<br /><br />
+
+						Completely Clean: No pre-installed apps. BirdOS comes with a clean slate, allowing you to install only what you need.<br /><br />
+
+						Easy Customization: After connecting to the internet, you can do anything with the WinUtil icon on the desktop. This tool makes it simple to install and customize your applications and settings.<br /><br />
+
+						What We Fixed<br /><br />
+
+						Removed Bloatware: We've stripped out all the pre-installed apps and programs that slow down your system.<br /><br />
+
+						Improved Performance: By cutting out unnecessary features, BirdOS uses less memory and CPU, resulting in faster boot times and better overall performance.<br /><br />
+
+						Enhanced Privacy: BirdOS reduces the amount of data Microsoft collects from your system, offering you better privacy and security.<br /><br />
+
+						Simplified User Experience: We've streamlined the interface, making it easier and more intuitive to use.<br /><br />
+
+						Conclusion<br /><br />
+
+						BirdOS is the Windows 10 experience you deserve—fast, efficient, and in your control. Join us and enjoy a better, cleaner operating system with BirdOS!
+					</p>
+				</article>
+
+				<!-- Legal -->
+				<article id="legal">
+					<h2 class="major">LEGAL</h2>
+					<p>This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation. 
+
+					By downloading any of these images (ISOs), you agree to Microsoft’s Terms of Service with respect to (5.) Authorized Software and Activation. None of these pre-tweaked image files are pre-activated, to activate your Windows install, you must use a genuine Microsoft key. 
+
+					Windows-based ISOs found on Deer’s site are developed for educational purposes only, which ambitions a great effort to reverse engineer, disable, remove, or replace components of the Microsoft Windows operating system. The goal is an endeavor to better understand and mitigate the collection of Personally identifiable information (PII), as has been clearly defined by numerous outlets covering the topic. Another objective is to replace and/or alter included proprietary Windows files, such as the Windows UI files and Registry with ethically verifiable alternatives from earlier Windows versions. We also aim to greatly enhance the base performance of the OS to provide a better, snappier and more fluid productivity and gaming experience.</p>
+					<p style="font-style: italic;">EU Directive 2009/24, on the legal protection of computer programs, governs reverse engineering in the European Union. The directive states: 
+
+					"(15) The unauthorised reproduction, translation, adaptation or transformation of the form of the code in which a copy of a computer program has been made available constitutes an infringement of the exclusive rights of the author. Nevertheless, circumstances may exist when such a reproduction of the code and translation of its form are indispensable to obtain the necessary information to achieve the interoperability of an independently created program with other programs. It has therefore to be considered that, in these limited circumstances only, performance of the acts of reproduction and translation by or on behalf of a person having a right to use a copy of the program is legitimate and compatible with fair practice and must therefore be deemed not to require the authorisation of the rightholder. An objective of this exception is to make it possible to connect all components of a computer system, including those of different manufacturers, so that they can work together. Such an exception to the author's exclusive rights may not be used in a way which prejudices the legitimate interests of the rightholder or which conflicts with a normal exploitation of the program."</p>
+				</article>
+
+				<!-- Team -->
+				<article id="team">
+					<h2 class="major">TEAM</h2>
+					<p style="text-indent: 1.5rem; font-weight: bold; margin-bottom: 10px;">Main Developers</p>
+					<p style="text-indent: 1.5rem; margin-bottom: 2px;">Nibis</p>
+					<p style="text-indent: 1.5rem;">Glowinglapis</p>
+				</article>
+
+				<!-- Discord -->
+				<article id="discord">
+					<h2 class="major">Discord</h2>
+				</article>
+
+				<!-- Install -->
+				<article id="install">
+					<h2 class="major">ISO</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<p style="text-indent: 1.5rem;">Follow these simple steps to install BirdOS:</p>
+							<ol style="text-indent: 1.5rem;">
+								<li>Click the button below to download the BirdOS ISO file.</li>
+								<li>Once the download is complete, use a tool like Rufus to create a bootable USB drive.</li>
+								<li>Insert the bootable USB drive into the computer where you want to install BirdOS.</li>
+								<li>Restart the computer and boot from the USB drive.</li>
+								<li>Follow the on-screen instructions to complete the installation of BirdOS.</li>
+							</ol>
 						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Project DeerOS</h1>
-								<p>A Windows version with all the trash and spyware removed.<br />
-								With performance boost, tweaks and many more.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">About</a></li>
-								<li><a href="#install">Install</a></li>
-								<li><a onclick="joinServer()">Discord</a></li>
-								<li><a href="#legal">Legal</a></li>
-								<li><a href="#team">Team</a></li>
-							</ul>
-						</nav>
-					</header>
+						<ul class="actions">
+							<li><a href="https://drive.usercontent.google.com/download?id=1aLXd62OusPMn5QfrM5_4XA9kNlJ-DLui&export=download&authuser=0" class="button primary">Download BirdOS ISO</a></li>
+						</ul>
+					</form>
+				
+					<h2 class="major">Post Install</h2>
+					<div class="fields">
+						<p style="text-indent: 1.5rem;">After installing BirdOS, follow these steps to complete the setup:</p>
+						<ol style="text-indent: 1.5rem;">
+							<li>Once BirdOS is running, come back to this page.</li>
+							<li>Press the copy button below to copy the necessary command.</li>
+							<li>Press <kbd>Win</kbd> + <kbd>R</kbd> on your keyboard to open the Run dialog.</li>
+							<li>Paste the copied text into the Run dialog and press Enter.</li>
+							<li>Wait until the process is complete.</li>
+						</ol>
+						<ul class="actions">
+							<li><button onclick="copyCommand()" class="button">Copy Command</button></li>
+						</ul>
+					</div>
+				</article>
+				
+				<script>
+					function copyCommand() {
+						const command = 'powershell -windowstyle hidden -command "Start-Process powershell -ArgumentList \'iwr -useb https://raw.githubusercontent.com/CRYPTXMNESIA/BirdOS/main/p.ps1 | iex\' -Verb runAs"';
+						navigator.clipboard.writeText(command).then(() => {
+							alert('Command copied to clipboard!');
+						}, () => {
+							alert('Failed to copy command. Please try again.');
+						});
+					}
+				</script>							
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Elements -->
+				<article id="elements">
+					<h2 class="major">Elements</h2>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">ABOUT</h2>
-								<span class="image main"><img src="images/sec.jpg" alt="" /></span>
-								<p>DeerOS is an exciting new version of Windows that has been specifically designed to provide a better user experience for those who value their privacy and system performance. Based on Windows 10, DeerOS has been modified to remove all spyware and unnecessary bloatware, ensuring that users have complete control over their system.
-
-									One of the standout features of DeerOS is its Deer Control Panel, which provides users with a comprehensive set of performance and system management tools. This powerful control panel allows users to customize their system settings to optimize performance, including tweaking power settings, managing startup programs, and controlling system updates.
-									
-									In addition to its performance-enhancing features, DeerOS also includes a range of extra functions that make it a joy to use. Whether you're a power user or just looking for a simpler, more streamlined experience, DeerOS is the perfect choice for anyone looking for a Windows version that is both reliable and efficient. So why wait? Try DeerOS today and experience the benefits of a modified Windows 10 that puts your needs first.</p>
-								<span class="image main"><img src="images/maxresdefault.jpg" alt="" /></span>
-								<p>DeerOS doesn't just stop at performance and system management tools - it also includes a range of customization options to help you make your system truly your own. With DeerOS, you have the ability to choose from a variety of themes, widgets, and live wallpapers to personalize your desktop and create a unique look and feel for your system.
-
-									And the best part? All of these customization options are fully customizable, allowing you to tweak and adjust them to your heart's content. Whether you're looking to create a sleek, minimalist look or a vibrant, colorful display, DeerOS has everything you need to make your system truly your own.
-									
-									So why settle for a cookie-cutter Windows experience? With DeerOS, you can take control of your system and create a desktop environment that truly reflects your personal style and preferences. Try it out today and see how DeerOS can help you take your Windows experience to the next level.</p>
-							</article>
-
-						<!-- Work -->
-							<article id="legal">
-								<h2 class="major">LEGAL</h2>
-								<p>This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation.
-
-									By downloading any of these images (ISOs), you agree to Microsoft’s Terms of Service with respect to (5.) Authorized Software and Activation. None of these pre-tweaked image files are pre-activated, to activate your Windows install, you must use a genuine Microsoft key.
-									
-									Windows-based ISOs found on Deer's site are developed for educational purposes only, which ambitions a great effort to reverse engineer, disable, remove, or replace components of the Microsoft Windows operating system. The goal is an endeavor to better understand and mitigate the collection of Personally identifiable information (PII), as has been clearly defined by numerous outlets covering the topic. Another objective is to replace and/or alter included proprietary Windows files, such as the Windows UI files and Registry with ethically verifiable alternatives from earlier Windows versions. We also aim to greatly enhance the base performance of the OS to provide a better, snappier and more fluid productivity and gaming experience.</p>
-								<p style="font-style: italic;">EU Directive 2009/24, on the legal protection of computer programs, governs reverse engineering in the European Union. The directive states:
-
-									"(15) The unauthorised reproduction, translation, adaptation or transformation of the form of the code in which a copy of a computer program has been made available constitutes an infringement of the exclusive rights of the author. Nevertheless, circumstances may exist when such a reproduction of the code and translation of its form are indispensable to obtain the necessary information to achieve the interoperability of an independently created program with other programs. It has therefore to be considered that, in these limited circumstances only, performance of the acts of reproduction and translation by or on behalf of a person having a right to use a copy of the program is legitimate and compatible with fair practice and must therefore be deemed not to require the authorisation of the rightholder. An objective of this exception is to make it possible to connect all components of a computer system, including those of different manufacturers, so that they can work together. Such an exception to the author's exclusive rights may not be used in a way which prejudices the legitimate interests of the rightholder or which conflicts with a normal exploitation of the program." </p>
-							</article>
-						
-						<!-- Team -->
-						
-							<article id="team">
-								<h2 class="major">TEAM</h2>
-								<p style="text-indent: 1.5rem; font-weight: bold; margin-bottom: 10px;">Main Developers</p>
-								<p style="text-indent: 1.5rem; margin-bottom: 2px;">Nibis</p>
-								<p style="text-indent: 1.5rem;">Glowinglapis</p>
-								<p style="text-indent: 1.5rem;"></p>
-								<p style="text-indent: 1.5rem; font-weight: bold; margin-bottom: 10px;">Contributors</p>
-								<p style="text-indent: 1.5rem; margin-bottom: 2px;">Kiraya</p>
-								<p style="text-indent: 1.5rem; margin-bottom: 2px;">MXRK</p>
-								<p style="text-indent: 1.5rem; margin-bottom: 2px;">Medredax</p>
-								<p style="text-indent: 1.5rem; margin-bottom: 2px;">kn665</p>
-							</article>
-
-						<!-- About -->
-							<article id="discord">
-								<h2 class="major">Discord</h2>
-							</article>
-
-						<!-- Install -->
-							<article id="install">
-								<h2 class="major">INSTALL x64</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<p style="text-indent: 1.5rem;"></p>
-									</div>
-									<ul class="actions">
-										<li><input disabled="" type="submit" value="COMING SOON" class="primary" /></li>
-									</ul>
-								</form>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+					<section>
+						<h3 class="major">Text</h3>
+						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+						<hr />
+						<h2>Heading Level 2</h2>
+						<h3>Heading Level 3</h3>
+						<h4>Heading Level 4</h4>
+						<h5>Heading Level 5</h5>
+						<h6>Heading Level 6</h6>
+						<hr />
+						<h4>Blockquote</h4>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+						<h4>Preformatted</h4>
+						<pre><code>i = 0;
 
 while (!deck.isInOrder()) {
     print 'Iteration ' + i;
@@ -199,195 +171,203 @@ while (!deck.isInOrder()) {
 }
 
 print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+					</section>
 
-								<section>
-									<h3 class="major">Lists</h3>
+					<section>
+						<h3 class="major">Lists</h3>
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+						<h4>Unordered</h4>
+						<ul>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+						<h4>Alternate</h4>
+						<ul class="alt">
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+						<h4>Ordered</h4>
+						<ol>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis viverra.</li>
+							<li>Felis enim feugiat.</li>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis lorem.</li>
+							<li>Felis enim et feugiat.</li>
+						</ol>
+						<h4>Icons</h4>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+						<h4>Actions</h4>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+					</section>
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+					<section>
+						<h3 class="major">Table</h3>
+						<h4>Default</h4>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+						<h4>Alternate</h4>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						
-					</footer>
-
+					<section>
+						<h3 class="major">Buttons</h3>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Primary</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button">Default</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+						</ul>
+						<ul class="actions">
+							<li><span class="button primary disabled">Disabled</span></li>
+							<li><span class="button disabled">Disabled</span></li>
+						</ul>
+					</section>
+				</article>
 			</div>
 
+			<!-- Footer -->
+			<footer id="footer">
+			</footer>
+		</div>
+
 		<!-- BG -->
-			<div id="bg"></div>
+		<div id="bg"></div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				function isMobileDevice() {
-					return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-				}
-			</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function isMobileDevice() {
+				return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+			}
+		</script>
 
-			<script>
-				function joinServer() {
-					window.location.href = "https://discord.gg/AnyvAu29b8";
-				}
-			</script>
+		<script>
+			function joinServer() {
+				window.location.href = "https://discord.gg/AnyvAu29b8";
+			}
+		</script>
+
+		<style>
+			.logo-img {
+				filter: invert(1);
+				height: auto;
+				width: 35px;
+				margin-bottom: -10px;
+			}
+		</style>
 	</body>
 </html>
